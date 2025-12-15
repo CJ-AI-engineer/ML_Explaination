@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header><h1>Application Error</h1></header>
+    <main>
+        <h2>Something went wrong during visualization.</h2>
+        <p>We encountered an error while running the algorithm ({{ algorithm }}) on the dataset ({{ dataset }}). This usually happens due to bad parameter inputs or an issue with the dataset processing.</p>
+        
+        <div class="error-details">
+            <p><strong>Details:</strong> {{ error_message }}</p>
+        </div>
+
+        <a href="/">Return to Configuration</a>
+    </main>
+</body>
+</html>

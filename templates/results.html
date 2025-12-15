@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Visualization Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Result: {{ algorithm }} on {{ dataset }}</h1>
+        <a href="/">Go Back</a>
+    </header>
+    <main>
+        {% for step in steps %}
+            <div class="step-card">
+                <h3>{{ loop.index }}. {{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+                <div class="step-visualization">
+                    <img src="{{ step.image_data }}" alt="Visualization for step {{ loop.index }}">
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
